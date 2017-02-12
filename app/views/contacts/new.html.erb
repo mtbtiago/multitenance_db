@@ -1,5 +1,9 @@
-<h1>New Contact</h1>
+<div class="page-header">
+  <%= link_to contacts_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1>New Contact</h1>
+</div>
 
-<%= render 'form', contact: @contact %>
-
-<%= link_to 'Back', contacts_path %>
+<%= render 'form' %>

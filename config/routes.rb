@@ -6,6 +6,8 @@ class SubdomainConstraint
 end
 
 Rails.application.routes.draw do
+  get 'pages/:page' => 'pages#show', as: 'page'
+
   constraints SubdomainConstraint do
     # when given subdomain, root path is contacts
     root to: 'contacts#index'
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
     root to: 'users#index'
   end
   # when no subdomain, go to home page
+  root controller: :pages, action: :show, page: 'about'
 end
