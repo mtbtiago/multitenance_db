@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   constraints subdomain: 'admin' do
     root to: 'users#index'
   end
-  # when no subdomain, go to home page
-  root controller: :pages, action: :show, page: 'about'
+  # when no subdomain, go user list
+  root to: 'users#index'
 end
